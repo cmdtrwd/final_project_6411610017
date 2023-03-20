@@ -1,0 +1,495 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: "AlbraDisplay";
+  src: url("../fonts/AlbraDisplayTRIAL-Bold-Italic.otf");
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: "AlbraGrotesk";
+  src: url("../fonts/AlbraGroteskTRIAL-Bold.otf");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "AlbraGrotesk";
+  src: url("../fonts/AlbraGroteskTRIAL-Semi.otf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "AlbraGrotesk";
+  src: url("../fonts/AlbraGroteskTRIAL-Light.otf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Albra";
+  src: url("../fonts/AlbraTRIAL-Black.otf");
+  font-weight: 900;
+}
+body {
+  scroll-behavior: smooth;
+  text-align: center;
+  background: #182037;
+}
+
+.sunglasses .frames {
+  display: flex;
+  justify-content: center;
+  gap: 17px;
+  position: relative;
+}
+.sunglasses .frames .frame {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  background-color: #D45648;
+  padding: 10px;
+}
+.sunglasses .frames .frame .len {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  background-color: white;
+  overflow: hidden;
+}
+.sunglasses .frames .frame .len .eye {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #182037;
+  top: 10px;
+  left: 5px;
+  content: " ";
+  animation: eyeroll 4s infinite;
+}
+.sunglasses .frames .frame .len .eye .blink {
+  display: none;
+}
+.sunglasses .frames .frame2 {
+  position: absolute;
+  height: 14px;
+  width: 38px;
+  background-color: #D45648;
+  top: 30px;
+}
+
+@keyframes eyeroll {
+  0% {
+    top: 10px;
+    left: 5px;
+  }
+  50% {
+    top: 30px;
+    left: 30px;
+  }
+  100% {
+    top: 10px;
+    left: 5px;
+  }
+}
+@keyframes blinkroll {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+#hero {
+  background-color: #182037;
+  padding: 150px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#hero h1 {
+  font-family: "AlbraGrotesk";
+  color: white;
+  font-size: 40px;
+  line-height: 110%;
+  margin-top: 40px;
+  text-align: center;
+}
+#hero .flexbox {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  justify-content: center;
+}
+#hero .flexbox .span1 {
+  font-family: "AlbraDisplay";
+  color: #F6D55C;
+}
+#hero .flexbox .button {
+  text-align: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 12px 18px;
+  color: white;
+  border: solid 1px #D45648;
+  margin: 0 auto;
+  box-shadow: inset 0 0 0 0 #D45648;
+  transition: all 0.25s ease-in;
+  font-family: "AlbraGrotesk";
+  font-weight: 500;
+  border-radius: 10px;
+  font-size: 14px;
+  background-color: #D45648;
+  cursor: pointer;
+  margin: 0;
+}
+#hero .flexbox .button:hover, #hero .flexbox .button:focus {
+  box-shadow: inset 0 3.25em 0 0 #182037;
+  color: white;
+  border: solid 1px white;
+}
+
+#products {
+  padding: 80px 0;
+  background-color: #E9C9DD;
+}
+#products h1 {
+  font-family: "Albra";
+  font-size: 32px;
+  color: #D45648;
+  margin-bottom: 40px;
+}
+#products .flexrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+#products .flexrow .product-item {
+  background-color: white;
+  border-radius: 135px 135px 0 0;
+  width: 270px;
+  padding: 100px 30px 50px 30px;
+}
+#products .flexrow .product-item img {
+  width: 100%;
+  height: 70px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#products .flexrow .product-item h2 {
+  font-family: "AlbraGrotesk";
+  font-weight: 500;
+  font-size: 24px;
+  margin-top: 40px;
+  margin-bottom: 12px;
+  color: #182037;
+}
+#products .flexrow .product-item p {
+  font-family: "AlbraGrotesk";
+  font-weight: 300;
+  font-size: 18px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+  color: #182037;
+}
+#products .flexrow .product-item .button {
+  text-align: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 12px 18px;
+  color: white;
+  border: solid 1px #D45648;
+  margin: 0 auto;
+  box-shadow: inset 0 0 0 0 #D45648;
+  transition: all 0.25s ease-in;
+  font-family: "AlbraGrotesk";
+  font-weight: 500;
+  border-radius: 10px;
+  font-size: 14px;
+  background-color: #D45648;
+  cursor: pointer;
+}
+#products .flexrow .product-item .button:hover, #products .flexrow .product-item .button:focus {
+  box-shadow: inset 0 3.25em 0 0 white;
+  color: #D45648;
+  border: solid 1px #D45648;
+}
+
+.marquee1, .marquee2 {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 30px 0;
+  background: #182037;
+  overflow-x: hidden;
+  height: 88px;
+}
+.marquee1 .track, .marquee2 .track {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+}
+.marquee1 .content, .marquee2 .content {
+  display: flex;
+  justify-content: center;
+  font-family: "Albra";
+  font-size: 32px;
+  color: #F6D55C;
+}
+.marquee1 svg, .marquee2 svg {
+  margin: 0 30px;
+}
+
+.marquee2 {
+  background: #D45648;
+}
+.marquee2 .content {
+  color: #E9C9DD;
+}
+.marquee2 svg path {
+  fill: #E9C9DD;
+}
+
+#lookbook {
+  padding: 80px 0;
+  background: #F6F2E0;
+}
+#lookbook .desktopimg {
+  display: none;
+}
+#lookbook .carousel-item {
+  padding: 0 60px;
+}
+#lookbook img {
+  width: 100%;
+  height: 300px;
+  margin: 0 auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#lookbook .carousel-control-next,
+#lookbook .carousel-control-prev {
+  filter: invert(42%) sepia(77%) saturate(598%) hue-rotate(319deg) brightness(88%) contrast(87%);
+}
+#lookbook p {
+  font-family: "AlbraGrotesk";
+  padding: 20px 60px 0 60px;
+  font-weight: 500;
+  line-height: 130%;
+  color: #D45648;
+  font-size: 16px;
+}
+#lookbook p span {
+  font-weight: 800;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#footer {
+  background-color: #182037;
+  padding: 40px 0;
+}
+#footer .social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+#footer .social-media i {
+  font-size: 26px;
+  color: #F6D55C;
+}
+#footer p {
+  font-family: "AlbraGrotesk";
+  margin-top: 16px;
+  color: #F6F2E0;
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.5;
+}
+
+@media screen and (min-width: 415px) {
+  .sunglasses .frames {
+    gap: 42px;
+  }
+  .sunglasses .frames .frame {
+    width: 265px;
+    height: 265px;
+    border-radius: 50%;
+    padding: 25px;
+  }
+  .sunglasses .frames .frame .len .eye {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    top: 10px;
+    left: 5px;
+    content: " ";
+    animation: none;
+  }
+  .sunglasses .frames .frame .len .eye .blink {
+    transition: all 0.5s linear;
+    display: block;
+    opacity: 0;
+    width: 10px;
+    margin-left: 20px;
+    margin-top: 50px;
+  }
+  .sunglasses .frames .frame .len .eye .blink.active {
+    opacity: 1;
+    width: 42px;
+    animation: blinkroll 3s infinite;
+  }
+  .sunglasses .frames .frame2 {
+    position: absolute;
+    height: 32px;
+    width: 94px;
+    background-color: #D45648;
+    top: 72px;
+  }
+  #hero {
+    padding: 150px 120px;
+    gap: 100px;
+    flex-direction: row-reverse;
+  }
+  #hero h1 {
+    font-size: 64px;
+    text-align: left;
+    margin-top: 0;
+  }
+  #hero .flexbox {
+    gap: 60px;
+    align-items: flex-start;
+  }
+  #hero .flexbox .span1 {
+    font-family: "AlbraDisplay";
+    color: #F6D55C;
+  }
+  #hero .flexbox .button {
+    padding: 15px 22px;
+    font-size: 20px;
+    margin-left: 3px;
+  }
+  #products {
+    padding: 80px 120px;
+  }
+  #products h1 {
+    font-size: 64px;
+  }
+  #products .flexrow {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+  }
+  #products .flexrow .product-item {
+    border-radius: 153px 153px 0 0;
+    width: 305px;
+  }
+  #products .flexrow .product-item img {
+    height: 80px;
+  }
+  .marquee1, .marquee2 {
+    padding: 53px 0;
+    height: 141px;
+  }
+  .marquee1 .content, .marquee2 .content {
+    font-size: 48px;
+  }
+  .marquee1 svg, .marquee2 svg {
+    margin: 0 45px;
+    width: 40px;
+    height: 40px;
+    border-radius: 0;
+  }
+  #lookbook .desktop {
+    display: none;
+  }
+  #lookbook .desktopimg {
+    display: inline;
+  }
+  #lookbook .carousel-item {
+    padding: 0 200px;
+  }
+  #lookbook .flexrow {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  #lookbook img {
+    width: 250px;
+    height: 300px;
+  }
+  #lookbook p {
+    padding: 40px 0 0 0;
+    font-size: 24px;
+  }
+  #lookbook p span {
+    font-weight: 800;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  #footer {
+    padding: 60px 0;
+  }
+  #footer .social-media {
+    gap: 35px;
+  }
+  #footer .social-media i {
+    font-size: 40px;
+    cursor: pointer;
+  }
+}/*# sourceMappingURL=index.css.map */

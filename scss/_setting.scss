@@ -1,0 +1,36 @@
+@font-face {
+    font-family: "AlbraDisplay";
+    src: url('../fonts/AlbraDisplayTRIAL-Bold-Italic.otf');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "AlbraGrotesk";
+    src: url('../fonts/AlbraGroteskTRIAL-Bold.otf');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: "AlbraGrotesk";
+    src: url('../fonts/AlbraGroteskTRIAL-Semi.otf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "AlbraGrotesk";
+    src: url('../fonts/AlbraGroteskTRIAL-Light.otf');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Albra";
+    src: url('../fonts/AlbraTRIAL-Black.otf');
+    font-weight: 900;
+}
+
+$blue: #182037;
+$red: #D45648;
+$yellow: #F6D55C;
+$pink: #E9C9DD;
+$cream: #F6F2E0;

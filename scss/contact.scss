@@ -1,0 +1,209 @@
+@use "_reset.scss";
+@use "_setting.scss";
+@use "navbar.scss";
+
+$blue: #182037;
+$red: #D45648;
+$yellow: #F6D55C;
+$pink: #E9C9DD;
+$cream: #F6F2E0;
+
+@mixin squareshape($size, $radius: 0) {
+    width: $size;
+    height: $size;
+    border-radius: $radius;
+}
+
+@mixin button($bgcolor, $color, $bgcolor-hover, $color-hover) {
+    text-align: center;
+    width: fit-content;
+    padding: 12px 18px;
+    color: $color;
+    border: solid 1px $bgcolor;
+    margin: 0 auto;
+    box-shadow: inset 0 0 0 0 $bgcolor;
+    transition: all 0.25s ease-in;
+    font-family: "AlbraGrotesk";
+    font-weight: 500;
+    border-radius: 10px;
+    font-size: 14px;
+    background-color: $bgcolor;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        box-shadow: inset 0 3.25em 0 0 $bgcolor-hover;
+        color: $color-hover;
+        border: solid 1px $color-hover;
+    }
+}
+
+body {
+    scroll-behavior: smooth;
+    text-align: center;
+    background-color: $pink;
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.marquee1 {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: 30px 0;
+    background: $red;
+    overflow-x: hidden;
+    height: 88px;
+
+    .track {
+        position: absolute;
+        white-space: nowrap;
+        will-change: transform;
+        animation: marquee 20s linear infinite
+    }
+
+    .content {
+        display: flex;
+        justify-content: center;
+        font-family: "Albra";
+        font-size: 36px;
+        color: $pink;
+    }
+
+    svg {
+        margin: 0 30px;
+        path {
+            fill: $pink;
+        }
+    }
+}
+
+#contact {
+    padding: 80px 40px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+
+    .contact-text {
+        display: flex;
+        flex-direction: column;
+        gap: 70px;
+
+        .contact-each-text {
+
+            h1 {
+                color: $red;
+                font-family: 'Albra';
+                font-size: 32px;
+                margin-bottom: 25px;
+            }
+
+            p {
+                color: $blue;
+                font-family: "AlbraGrotesk";
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 150%;
+
+                span {
+                    opacity: 0.8;
+                    font-family: 'AlbraGrotesk';
+                    font-weight: 300;
+                }
+            }
+
+            .social-media {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 18px;
+
+                i {
+                    font-size: 26px;
+                    color: $blue;
+                }
+            }
+        }
+
+    }
+
+    img {
+        width: 100%;
+        border-radius: 540px 540px 0px 0px;
+    }
+}
+
+
+@media screen and (min-width: 415px) {
+
+    .marquee1 {
+        padding: 53px 0;
+        height: 141px;
+
+        .content {
+            font-size: 48px;
+        }
+
+        svg {
+            margin: 0 45px;
+            @include squareshape(40px);
+        }
+    }
+
+    #contact {
+        padding: 100px 0;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+        gap: 120px;
+    
+        .contact-text {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            
+    
+            .contact-each-text {
+    
+                h1 {
+                    text-align: left;
+                    font-size: 36px;
+                    margin-bottom: 25px;
+                }
+    
+                p {
+                    text-align: left;
+                    font-size: 18px;
+                }
+    
+                .social-media {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 22px;
+                    cursor: pointer;
+    
+                    i {
+                        font-size: 28px;
+                    }
+                }
+            }
+    
+        }
+    
+        img {
+            width: auto;
+            height: 446px;
+            border-radius: 540px 540px 0px 0px;
+        }
+    }
+
+}

@@ -1,0 +1,477 @@
+@use "_reset.scss";
+@use "_setting.scss";
+
+$blue: #182037;
+$red: #D45648;
+$yellow: #F6D55C;
+$pink: #E9C9DD;
+$cream: #F6F2E0;
+
+@mixin squareshape($size, $radius: 0) {
+    width: $size;
+    height: $size;
+    border-radius: $radius;
+}
+
+@mixin button($bgcolor, $color, $bgcolor-hover, $color-hover) {
+    text-align: center;
+    width: fit-content;
+    padding: 12px 18px;
+    color: $color;
+    border: solid 1px $bgcolor;
+    margin: 0 auto;
+    box-shadow: inset 0 0 0 0 $bgcolor;
+    transition: all 0.25s ease-in;
+    font-family: "AlbraGrotesk";
+    font-weight: 500;
+    border-radius: 10px;
+    font-size: 14px;
+    background-color: $bgcolor;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        box-shadow: inset 0 3.25em 0 0 $bgcolor-hover;
+        color: $color-hover;
+        border: solid 1px $color-hover;
+    }
+}
+
+body {
+    scroll-behavior: smooth;
+    text-align: center;
+    background: $blue;
+}
+
+.sunglasses {
+    .frames {
+        display: flex;
+        justify-content: center;
+        gap: 17px;
+        position: relative;
+
+        .frame {
+            @include squareshape(108px, 50%);
+            background-color: $red;
+            padding: 10px;
+
+            .len {
+                @include squareshape(100%, 50%);
+                position: relative;
+                background-color: white;
+                overflow: hidden;
+
+                .eye {
+                    @include squareshape(50px, 50%);
+                    position: absolute;
+                    background-color: #182037;
+                    top: 10px;
+                    left: 5px;
+                    content: " ";
+                    animation: eyeroll 4s infinite;
+
+                    .blink{
+                        display: none;
+                        
+                    }
+                }
+            }
+        }
+
+        .frame2 {
+            position: absolute;
+            height: 14px;
+            width: 38px;
+            background-color: $red;
+            top: 30px;
+        }
+    }
+}
+
+@keyframes eyeroll {
+    0% {
+        top: 10px;
+        left: 5px;
+    }
+
+    50% {
+        top: 30px;
+        left: 30px;
+    }
+
+    100% {
+        top: 10px;
+        left: 5px;
+    }
+}
+
+@keyframes blinkroll {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+#hero {
+    background-color: $blue;
+    padding: 150px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        font-family: "AlbraGrotesk";
+        color: white;
+        font-size: 40px;
+        line-height: 110%;
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .flexbox{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        align-items:center;
+        justify-content: center;
+        .span1 {
+            font-family: "AlbraDisplay";
+            color: $yellow;
+        }
+    
+        .button {
+            @include button($red, white, $blue, white);
+            margin: 0;
+        }
+    }
+
+}
+
+#products {
+    padding: 80px 0;
+    background-color: $pink;
+
+    h1 {
+        font-family: "Albra";
+        font-size: 32px;
+        color: $red;
+        margin-bottom: 40px;
+    }
+
+    .flexrow {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+
+        .product-item {
+            background-color: white;
+            border-radius: 135px 135px 0 0;
+            width: 270px;
+            padding: 100px 30px 50px 30px;
+
+            img {
+                width: 100%;
+                height: 70px;
+                object-fit: contain;
+            }
+
+            h2 {
+                font-family: "AlbraGrotesk";
+                font-weight: 500;
+                font-size: 24px;
+                margin-top: 40px;
+                margin-bottom: 12px;
+                color: $blue;
+            }
+
+            p {
+                font-family: "AlbraGrotesk";
+                font-weight: 300;
+                font-size: 18px;
+                margin-bottom: 20px;
+                opacity: 0.8;
+                color: $blue;
+            }
+
+            .button {
+                @include button($red, white, white, $red)
+            }
+        }
+    }
+}
+
+.marquee1 {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: 30px 0;
+    background: $blue;
+    overflow-x: hidden;
+    height: 88px;
+
+    .track {
+        position: absolute;
+        white-space: nowrap;
+        will-change: transform;
+    }
+
+    .content {
+        display: flex;
+        justify-content: center;
+        font-family: "Albra";
+        font-size: 32px;
+        color: $yellow;
+    }
+
+    svg {
+        margin: 0 30px;
+    }
+}
+
+.marquee2 {
+    @extend .marquee1;
+    background: $red;
+
+    .content {
+        color: $pink;
+    }
+
+    svg {
+        path {
+            fill: $pink;
+        }
+    }
+}
+
+#lookbook {
+    padding: 80px 0;
+    background: $cream;
+
+    .desktopimg {
+        display: none;
+    }
+
+    .carousel-item {
+        padding: 0 60px;
+    }
+
+    img {
+        width: 100%;
+        height: 300px;
+        margin: 0 auto;
+        object-fit: cover;
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+        filter: invert(42%) sepia(77%) saturate(598%) hue-rotate(319deg) brightness(88%) contrast(87%);
+    }
+
+    p {
+        font-family: "AlbraGrotesk";
+        padding: 20px 60px 0 60px;
+        font-weight: 500;
+        line-height: 130%;
+        color: $red;
+        font-size: 16px;
+
+        span {
+            font-weight: 800;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}
+
+#footer {
+    background-color: $blue;
+    padding: 40px 0;
+
+    .social-media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 18px;
+
+        i {
+            font-size: 26px;
+            color: $yellow;
+        }
+    }
+
+    p {
+        font-family: "AlbraGrotesk";
+        margin-top: 16px;
+        color: $cream;
+        font-size: 12px;
+        font-weight: 500;
+        opacity: 0.5;
+    }
+}
+
+@media screen and (min-width: 415px) {
+    .sunglasses {
+        .frames {
+            gap: 42px;
+
+            .frame {
+                @include squareshape(265px, 50%);
+                padding: 25px;
+
+                .len {
+                    .eye {
+                        @include squareshape(125px, 50%);
+                        top: 10px;
+                        left: 5px;
+                        content: " ";
+                        animation: none;
+                       
+                        .blink{
+                            transition: all 0.5s linear;
+                            display: block;
+                            opacity: 0;
+                            width: 10px;
+                            margin-left: 20px;
+                            margin-top: 50px;
+                            &.active{
+                                opacity: 1;
+                                width: 42px;
+                                animation: blinkroll 3s infinite;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .frame2 {
+                position: absolute;
+                height: 32px;
+                width: 94px;
+                background-color: $red;
+                top: 72px;
+            }
+        }
+    }
+
+    #hero {
+        padding: 150px 120px;
+        gap: 100px;
+        flex-direction: row-reverse;
+
+        h1 {
+            font-size: 64px;
+            text-align: left;
+            margin-top: 0;
+        }
+
+        .flexbox{
+            gap: 60px;;
+            align-items: flex-start;
+            .span1 {
+                font-family: "AlbraDisplay";
+                color: $yellow;
+            }
+        
+            .button {
+                padding: 15px 22px;
+            font-size: 20px;
+            margin-left: 3px ;
+            }
+        }
+
+        
+    }
+
+    #products {
+        padding: 80px 120px;
+
+        h1 {
+            font-size: 64px;
+        }
+
+        .flexrow {
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 0;
+
+            .product-item {
+                border-radius: 153px 153px 0 0;
+                width: 305px;
+
+                img {
+                    height: 80px;
+                }
+            }
+        }
+    }
+
+    .marquee1 {
+        padding: 53px 0;
+        height: 141px;
+
+        .content {
+            font-size: 48px;
+        }
+
+        svg {
+            margin: 0 45px;
+            @include squareshape(40px);
+        }
+    }
+
+    #lookbook {
+        .desktop {
+            display: none;
+        }
+
+        .desktopimg {
+            display: inline;
+        }
+
+        .carousel-item {
+            padding: 0 200px;
+        }
+
+        .flexrow {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        img {
+            width: 250px;
+            height: 300px;
+        }
+
+        p {
+            padding: 40px 0 0 0;
+            font-size: 24px;
+
+            span {
+                font-weight: 800;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+    }
+
+    #footer {
+        padding: 60px 0;
+
+        .social-media {
+            gap: 35px;
+
+            i {
+                font-size: 40px;
+                cursor: pointer;
+            }
+        }
+    }
+}

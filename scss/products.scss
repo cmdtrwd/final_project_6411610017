@@ -1,0 +1,276 @@
+@use "_reset.scss";
+@use "_setting.scss";
+
+$blue: #182037;
+$red: #D45648;
+$yellow: #F6D55C;
+$pink: #E9C9DD;
+$cream: #F6F2E0;
+
+@mixin squareshape($size, $radius: 0) {
+    width: $size;
+    height: $size;
+    border-radius: $radius;
+}
+
+@mixin button($color, $text-hover-color) {
+    text-align: center;
+    width: fit-content;
+    padding: 12px 18px;
+    color: $text-hover-color;
+    border: solid 1px $color;
+    margin: 0 auto;
+    box-shadow: inset 0 0 0 0 $color;
+    transition: all 0.25s ease-in;
+    font-family: "AlbraGrotesk";
+    font-weight: 500;
+    border-radius: 10px;
+    font-size: 14px;
+    background-color: $color;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        box-shadow: inset 0 3.25em 0 0 $text-hover-color;
+        color: $color;
+    }
+}
+
+body {
+    background: $cream;
+    text-align: center;
+    scroll-behavior: smooth;
+}
+
+.title {
+    font-family: "Albra";
+    font-size: 32px;
+    color: $blue;
+    padding: 80px 0;
+}
+
+.flexitem{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 21px 20px 25px;
+    align-items: center;
+
+    p{
+        font-family: "AlbraGrotesk";
+        font-weight: 300;
+        color: $blue;
+    }
+
+    .dropdown{
+        width: fit-content;
+        text-align: right;
+        .btn{
+            background: $cream;
+            border: solid 1px $blue;
+            color: $blue;
+            font-family: "AlbraGrotesk";
+            font-weight: 300;
+        }
+
+        .dropdown-menu{
+            background: $cream;
+            border: solid 1px $blue;
+            
+            a{
+                color: $blue;
+                padding: 10px 20px;
+                font-family: "AlbraGrotesk";
+                font-weight: 300;
+                border-bottom: solid 0.5px #1820377b;
+            }
+        }
+    }
+}
+
+#products {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px 40px 20px;
+    gap: 20px;
+
+
+    .product-item {
+        width: 100%;
+        background: white;
+        padding: 30px 20px;
+    }
+
+    .hover{
+        display: none;
+    }
+
+    img {
+        width: 100%;
+        object-fit: contain;
+    }
+
+    h2 {
+        font-family: "AlbraGrotesk";
+        font-weight: 500;
+        font-size: 18px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        color: $blue;
+    }
+
+    p {
+        font-family: "AlbraGrotesk";
+        font-weight: 300;
+        font-size: 14px;
+        margin-bottom: 20px;
+        opacity: 0.8;
+        color: $blue;
+    }
+
+    .button {
+        @include button($red, white)
+    }    
+}
+
+#footer {
+    background-color: $blue;
+    padding: 40px 0;
+
+    .social-media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 18px;
+
+        i {
+            font-size: 26px;
+            color: $yellow;
+        }
+    }
+
+    p {
+        font-family: "AlbraGrotesk";
+        margin-top: 16px;
+        color: $cream;
+        font-size: 12px;
+        font-weight: 500;
+        opacity: 0.5;
+    }
+}
+
+@media screen and (min-width: 415px){
+    .title {
+        font-size: 48px;
+        padding: 100px 0;
+    }
+
+    .flexitem{
+        padding: 0 81px 20px 85px;
+        align-items: center;
+    
+        p{
+            font-family: "AlbraGrotesk";
+            font-weight: 300;
+            color: $blue;
+        }
+    
+        .dropdown{
+            width: fit-content;
+            text-align: right;
+            .btn{
+                background: $cream;
+                border: solid 1px $blue;
+                color: $blue;
+                font-family: "AlbraGrotesk";
+                font-weight: 300;
+            }
+    
+            .dropdown-menu{
+                background: $cream;
+                border: solid 1px $blue;
+                
+                a{
+                    color: $blue;
+                    padding: 10px 20px;
+                    font-family: "AlbraGrotesk";
+                    font-weight: 300;
+                    border-bottom: solid 0.5px #1820377b;
+                }
+            }
+        }
+    }
+
+    #products {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding: 0 80px 80px 80px;
+        gap: 20px;
+    
+    
+        .product-item {
+            width: 100%;
+            background: white;
+            padding: 30px 20px;
+            border: solid 1px white;
+            transition: all 0.5s linear;
+            cursor: pointer;
+            .active{
+                display: inline;
+            }
+            .hover{
+                display: none;
+            }
+
+            &:hover{
+                border: solid 0.5px $red;
+                .active{
+                    display: none;
+                }
+                .hover{
+                    display: inline;
+                }
+            }
+        }
+    
+        img {
+            width: 80%;
+            object-fit: contain;
+        }
+    
+        h2 {
+            font-family: "AlbraGrotesk";
+            font-weight: 500;
+            font-size: 18px;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            color: $blue;
+        }
+    
+        p {
+            font-family: "AlbraGrotesk";
+            font-weight: 300;
+            font-size: 14px;
+            margin-bottom: 20px;
+            opacity: 0.8;
+            color: $blue;
+        }
+    
+        .button {
+            @include button($red, white)
+        }    
+    }
+
+    #footer {
+        padding: 60px 0;
+
+        .social-media {
+            gap: 35px;
+
+            i {
+                font-size: 40px;
+                cursor: pointer;
+            }
+        }
+    }
+}

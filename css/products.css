@@ -1,0 +1,328 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: "AlbraDisplay";
+  src: url("../fonts/AlbraDisplayTRIAL-Bold-Italic.otf");
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: "AlbraGrotesk";
+  src: url("../fonts/AlbraGroteskTRIAL-Bold.otf");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "AlbraGrotesk";
+  src: url("../fonts/AlbraGroteskTRIAL-Semi.otf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "AlbraGrotesk";
+  src: url("../fonts/AlbraGroteskTRIAL-Light.otf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Albra";
+  src: url("../fonts/AlbraTRIAL-Black.otf");
+  font-weight: 900;
+}
+body {
+  background: #F6F2E0;
+  text-align: center;
+  scroll-behavior: smooth;
+}
+
+.title {
+  font-family: "Albra";
+  font-size: 32px;
+  color: #182037;
+  padding: 80px 0;
+}
+
+.flexitem {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 21px 20px 25px;
+  align-items: center;
+}
+.flexitem p {
+  font-family: "AlbraGrotesk";
+  font-weight: 300;
+  color: #182037;
+}
+.flexitem .dropdown {
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: right;
+}
+.flexitem .dropdown .btn {
+  background: #F6F2E0;
+  border: solid 1px #182037;
+  color: #182037;
+  font-family: "AlbraGrotesk";
+  font-weight: 300;
+}
+.flexitem .dropdown .dropdown-menu {
+  background: #F6F2E0;
+  border: solid 1px #182037;
+}
+.flexitem .dropdown .dropdown-menu a {
+  color: #182037;
+  padding: 10px 20px;
+  font-family: "AlbraGrotesk";
+  font-weight: 300;
+  border-bottom: solid 0.5px rgba(24, 32, 55, 0.4823529412);
+}
+
+#products {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20px 40px 20px;
+  gap: 20px;
+}
+#products .product-item {
+  width: 100%;
+  background: white;
+  padding: 30px 20px;
+}
+#products .hover {
+  display: none;
+}
+#products img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#products h2 {
+  font-family: "AlbraGrotesk";
+  font-weight: 500;
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: #182037;
+}
+#products p {
+  font-family: "AlbraGrotesk";
+  font-weight: 300;
+  font-size: 14px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+  color: #182037;
+}
+#products .button {
+  text-align: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 12px 18px;
+  color: white;
+  border: solid 1px #D45648;
+  margin: 0 auto;
+  box-shadow: inset 0 0 0 0 #D45648;
+  transition: all 0.25s ease-in;
+  font-family: "AlbraGrotesk";
+  font-weight: 500;
+  border-radius: 10px;
+  font-size: 14px;
+  background-color: #D45648;
+  cursor: pointer;
+}
+#products .button:hover, #products .button:focus {
+  box-shadow: inset 0 3.25em 0 0 white;
+  color: #D45648;
+}
+
+#footer {
+  background-color: #182037;
+  padding: 40px 0;
+}
+#footer .social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+#footer .social-media i {
+  font-size: 26px;
+  color: #F6D55C;
+}
+#footer p {
+  font-family: "AlbraGrotesk";
+  margin-top: 16px;
+  color: #F6F2E0;
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.5;
+}
+
+@media screen and (min-width: 415px) {
+  .title {
+    font-size: 48px;
+    padding: 100px 0;
+  }
+  .flexitem {
+    padding: 0 81px 20px 85px;
+    align-items: center;
+  }
+  .flexitem p {
+    font-family: "AlbraGrotesk";
+    font-weight: 300;
+    color: #182037;
+  }
+  .flexitem .dropdown {
+    width: -moz-fit-content;
+    width: fit-content;
+    text-align: right;
+  }
+  .flexitem .dropdown .btn {
+    background: #F6F2E0;
+    border: solid 1px #182037;
+    color: #182037;
+    font-family: "AlbraGrotesk";
+    font-weight: 300;
+  }
+  .flexitem .dropdown .dropdown-menu {
+    background: #F6F2E0;
+    border: solid 1px #182037;
+  }
+  .flexitem .dropdown .dropdown-menu a {
+    color: #182037;
+    padding: 10px 20px;
+    font-family: "AlbraGrotesk";
+    font-weight: 300;
+    border-bottom: solid 0.5px rgba(24, 32, 55, 0.4823529412);
+  }
+  #products {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 0 80px 80px 80px;
+    gap: 20px;
+  }
+  #products .product-item {
+    width: 100%;
+    background: white;
+    padding: 30px 20px;
+    border: solid 1px white;
+    transition: all 0.5s linear;
+    cursor: pointer;
+  }
+  #products .product-item .active {
+    display: inline;
+  }
+  #products .product-item .hover {
+    display: none;
+  }
+  #products .product-item:hover {
+    border: solid 0.5px #D45648;
+  }
+  #products .product-item:hover .active {
+    display: none;
+  }
+  #products .product-item:hover .hover {
+    display: inline;
+  }
+  #products img {
+    width: 80%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  #products h2 {
+    font-family: "AlbraGrotesk";
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #182037;
+  }
+  #products p {
+    font-family: "AlbraGrotesk";
+    font-weight: 300;
+    font-size: 14px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+    color: #182037;
+  }
+  #products .button {
+    text-align: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 12px 18px;
+    color: white;
+    border: solid 1px #D45648;
+    margin: 0 auto;
+    box-shadow: inset 0 0 0 0 #D45648;
+    transition: all 0.25s ease-in;
+    font-family: "AlbraGrotesk";
+    font-weight: 500;
+    border-radius: 10px;
+    font-size: 14px;
+    background-color: #D45648;
+    cursor: pointer;
+  }
+  #products .button:hover, #products .button:focus {
+    box-shadow: inset 0 3.25em 0 0 white;
+    color: #D45648;
+  }
+  #footer {
+    padding: 60px 0;
+  }
+  #footer .social-media {
+    gap: 35px;
+  }
+  #footer .social-media i {
+    font-size: 40px;
+    cursor: pointer;
+  }
+}/*# sourceMappingURL=products.css.map */
